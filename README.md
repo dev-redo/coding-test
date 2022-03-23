@@ -1,2 +1,2 @@
-# https-github.com-dev-redo-BOJ
-This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+# BOJ solved with JS
+백준 문제 풀이를 저장하는 리포지토리입니다. 언어는 JS로 풀고 있습니다.
