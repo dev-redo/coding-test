@@ -92,10 +92,14 @@ for (let i = 0; i < input.length; i++) {
     
     else {
         const isNumber = (curr) => (typeof curr === 'number');
+        // 반례: 전부 숫자가 아닐 때
+        // 닫힌 괄호가 전부 들어오지 않아 짝이 안 맞는 경우
+        // ex. ([]
         if (!stack.arr.every(isNumber)) {
             res = 0;
             break;
         }
+        // 전체가 짝이 맞아 숫자일 때 => 정답
         res = stack.arr.reduce((a,b) => (a+b), 0);
     }
 }
