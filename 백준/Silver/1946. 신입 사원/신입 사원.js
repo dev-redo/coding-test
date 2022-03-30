@@ -14,8 +14,6 @@ for (let i = 0; i < parsed.length; i++) {
     }
 }
 
-// console.log(tests);
-
 const ans = [];
 
 for (let test of tests) {
