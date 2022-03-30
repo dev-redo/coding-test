@@ -2,6 +2,8 @@ const input = require('fs').readFileSync('/dev/stdin').toString().split('\n').sl
 const parsed = input.map(str => str.split(' ').map(c => parseInt(c)));
 
 const t = parsed.shift();
+
+// input을 각 테스트에 대한 배열로 변경
 const tests = [];
 
 for (let i = 0; i < parsed.length; i++) {
@@ -15,7 +17,7 @@ for (let i = 0; i < parsed.length; i++) {
 }
 
 const ans = [];
-
+// 각 테스트에 대한 결과 체크
 for (let test of tests) {
     let cnt = 0;
     let upper = Number.MAX_SAFE_INTEGER;
