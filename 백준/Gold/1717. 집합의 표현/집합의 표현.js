@@ -16,10 +16,7 @@ function solution() {
     const [n,m] = input.shift();
 
     const answer = [];
-    const arr = new Array(n+1);
-    for (let i = 0; i <= n; i++) {
-        arr[i] = i
-    }
+    const arr = new Array(n+1).fill(0).map((_, i) => i);
     for (let el of input) {
         if (el[0] === 0) {
             unionParent(arr, el[1], el[2])
@@ -35,11 +32,6 @@ function solution() {
 
 function getParent(arr, n) {
   if (arr[n] === n) return n;
-  else {
-      let parent = getParent(arr, arr[n]);
-      arr[n] = parent;
-      return parent
-  }
   return (arr[n] = getParent(arr, arr[n]));
 }
 
