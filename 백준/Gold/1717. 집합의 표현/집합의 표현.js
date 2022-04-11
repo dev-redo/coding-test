@@ -36,10 +36,10 @@ function getParent(arr, n) {
 }
 
 function unionParent(arr, a, b) {
-  a = getParent(arr, a);
-  b = getParent(arr, b);
-  if (a < b) arr[b] = a;
-  else arr[a] = b;
+  const n1 = getParent(arr, a);
+  const n2 = getParent(arr, b);
+  if (n1 < n2) arr[n2] = n1;
+  else arr[n1] = n2;
 }
 
 function findParent(arr, a, b) {
