@@ -1,3 +1,4 @@
+// 1. 배열 풀이
 const readline = require('readline');
 const input = [];
 
