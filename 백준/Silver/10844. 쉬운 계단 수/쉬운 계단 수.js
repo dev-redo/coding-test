@@ -13,17 +13,7 @@ for (let i=1; i<=9; i++) {
 
 for (let i=1; i<N; i++) {
     for (let j=0; j<=9; j++) {
-        let num = 0;
-        if (j === 0) {
-            num = DP[i-1][1];
-        }
-        else if (j === 9) {
-            num = DP[i-1][8];
-        }
-        else {
-            num = (DP[i-1][j-1] || 0) + (DP[i-1][j+1] || 0)
-        }
-        DP[i][j] = num % 1000000000;
+        DP[i][j] = (DP[i-1][j-1] || 0) + (DP[i-1][j+1] || 0) % 1000000000;
     }
 }
 
