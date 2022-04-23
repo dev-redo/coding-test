@@ -6,13 +6,14 @@ function solution(progresses, speeds) {
     })
     const daysLen = days.length - 1;
     let maxDay = days[0];
+    let deploy = 0;
     
-    for (let i = 0, j = 0; i <= daysLen; i++) {
+    for (let i=0; i <= daysLen; i++) {
         if (maxDay < days[i]) {
             maxDay = days[i];
-            answer[++j] = 1;
+            answer[++deploy] = 1;
         } else {
-            answer[j] += 1;
+            answer[deploy] += 1;
         }
     }
     return answer;
