@@ -2,7 +2,7 @@ const input = require('fs').readFileSync('/dev/stdin').toString().split('').slic
 
 const parsed = input.filter(num => {
   num = Number(num);
-  return isNumber(num) ?? num
+  return isNumber(num);
 });
 
 const answer = Number(parsed.join(""));
