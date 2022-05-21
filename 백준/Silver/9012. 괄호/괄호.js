@@ -1,33 +1,21 @@
-function solution(input) {
-  const cmd = (str) => {
+const input = require('fs').readFileSync('/dev/stdin').toString().split('\n').slice(0, -1);
+const t = Number(input.shift());
+
+function solution(str) {
+    const arr = str.split('');
     const stack = [];
-    const list = str.split("");
-
-    list.forEach((value) => {
-      if (stack[0] === ')') return "NO";
-      if (stack.length === 0)stack.push(value);
-      else if (stack.slice(-1)[0] === '(' && value === ')') stack.pop();
-      else stack.push(value);
-    });
-
-    if (stack.length == 0) return "YES";
-    else return "NO";
-  };
-
-  let answer = input.slice(1).reduce((pre, cur) => {
-	return pre += `${cmd(cur)}\n`
-  }, "");
-
-  return answer;
+    for(let x of str){
+        if(x==='(') stack.push(x);
+        else{
+            if(stack.length===0) return "NO";
+            stack.pop();
+        }
+    }
+    if (stack.length > 0) return 'NO';
+    return 'YES';
 }
 
-const input = [];
-require("readline")
-  .createInterface(process.stdin, process.stdout)
-  .on("line", (line) => {
-    input.push(line);
-  })
-  .on("close", () => {
-    console.log(solution(input));
-    process.exit();
-  });
+const answer = input.reduce((prev, curr)=> {
+    return prev += `${solution(curr)}\n`
+}, '');
+console.log(answer);
