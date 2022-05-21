@@ -1,26 +1,25 @@
 function solution(s) {
     let answer = s.length;
-    let result = [];
-    for(i = 1 ; i < s.length+1 ; i++) {
-        sentence = "";
-        last = 0;
-        while(last<s.length) {
-           cnt = 1;
-           while(s.slice(last,last+i) == s.slice(last+i,last+i+i)) {
+    
+    for (let i = 1; i <= Math.floor(s.length / 2); i++) {
+      	let sentence = "";
+        let idx = 0;
+
+      	while(idx < s.length) {
+           let cnt = 1;
+           while (s.slice(idx, idx+i) === s.slice(idx+i, idx+i+i)) {
                  cnt++;
-                 last = last+i; 
+                 idx += i;
            }
+          
            if(cnt > 1) {
-                sentence = sentence + cnt;               
+                sentence += cnt;
            }
-            sentence = sentence + s.slice(last,last+i);
-            last = last+i;
-        } 
-        temp = {};
-        temp.sentence = sentence;
-        temp.len = sentence.length
-        result.push(temp);
+           const str = s.slice(idx, idx+i);
+           sentence = sentence + str;
+           idx += i;
+        }
+        answer = Math.min(answer, sentence.length);
     }
-    result.sort((a, b) => a.len - b.len);     
-    return result[0].len;
+    return answer;
 }
