@@ -1,27 +1,27 @@
-const combination = new Set();
+const permutation = new Set();
 
 function solution(numbers) {
-    makeCombination('', numbers);
+    makePermutation('', numbers);
     
-    const combination_arr = Array.from(combination);
-    const max_combination = Math.max(...combination_arr);
+    const permutation_arr = Array.from(permutation);
+    const max_permutation = Math.max(...permutation_arr);
     
-    const primeNumberSieve_of_max = primeNumberSieve(max_combination);
-    const combination_primeArr = combination_arr.filter(num => {
+    const primeNumberSieve_of_max = primeNumberSieve(max_permutation);
+    const permutation_primeArr = permutation_arr.filter(num => {
         return primeNumberSieve_of_max.includes(num);
     });
     
-    return combination_primeArr.length;
+    return permutation_primeArr.length;
 }
 
 
-function makeCombination(comb, others) {
-    if (comb !== '') {
-        combination.add(Number(comb));
+function makePermutation(perm, others) {
+    if (perm !== '') {
+        permutation.add(Number(perm));
     }
     for (let i=0; i < others.length; i++) {
         const remove_i_others = others.substr(0,i) + others.substr(i+1);
-        makeCombination(comb + others[i], remove_i_others);
+        makePermutation(perm + others[i], remove_i_others);
     }
 }
 
