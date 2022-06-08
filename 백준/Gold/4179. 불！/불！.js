@@ -6,14 +6,13 @@ const board = input.map(s => s.split(""));
 const dx=[1, 0, -1, 0];
 const dy=[0, 1, 0, -1];
 
-function solution(c,r,board) {
-    const dist1 = [...Array(c)].map(() => Array(r).fill(-1));
-    const dist2 = [...Array(c)].map(() => Array(r).fill(-1));
-    
+function solution(r,c,board) {
+    const dist1 = [...Array(r)].map(() => Array(c).fill(-1));
+    const dist2 = [...Array(r)].map(() => Array(c).fill(-1));
     const q1 = [];
     const q2 = [];
-    for (let i=0; i<c; i++) {
-        for (let j=0; j<r; j++) {
+    for (let i=0; i<r; i++) {
+        for (let j=0; j<c; j++) {
             if(board[i][j] === 'F') {
                 q1.push([i,j]);
                 dist1[i][j] = 0;
@@ -24,6 +23,7 @@ function solution(c,r,board) {
             }
         }
     }
+    
     // 불 BFS
     let h1 = 0;
     while (q1.length > h1) {
@@ -31,7 +31,7 @@ function solution(c,r,board) {
         for (let k=0; k<4; k++) {
             const nx = x + dx[k];
             const ny = y + dy[k];
-            if(nx < 0 || nx >= c || ny < 0 || ny >= r) continue;
+            if(nx < 0 || nx >= r || ny < 0 || ny >= c) continue;
             if(dist1[nx][ny] >= 0 || board[nx][ny] === '#') continue;
             dist1[nx][ny] = dist1[x][y] + 1;
             q1.push([nx,ny]);
@@ -47,7 +47,7 @@ function solution(c,r,board) {
             const ny = y + dy[k];
             // 범위를 벗어났다는 것은 탈출 성공했다는 말
             // 큐에 거리 순으로 들어가므로 최초에 탈출한 시간을 출력하면 됨
-            if (nx < 0 || nx >= c || ny < 0 || ny >= r) {
+            if (nx < 0 || nx >= r || ny < 0 || ny >= c) {
                 return dist2[x][y] + 1;
             }
             // 이미 방문 or 벽(#)
