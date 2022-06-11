@@ -25,15 +25,8 @@ function solution(n,k,board) {
     for (let i=0; i<arr.length; i++) {
         let lo = i-k-1;
         let hi = i+k+1;
-        if (lo >= 0) {
-            window -= arr[lo];
-        }
-        if (hi < arr.length) {
-            window += arr[hi];
-        }
-        if (maxIce < window) {
-            maxIce = window;
-        }
+        window = window - (arr[lo] ?? 0) + (arr[hi] ?? 0);
+        maxIce = Math.max(maxIce, window);
     }
     
     
