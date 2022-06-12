@@ -22,7 +22,7 @@ function rotation(board, query) {
     x1 -=1; y1 -=1; x2 -=1; y2 -=1;
 
     let temp = board[x1][y1]; // 8
-    let minNum = Number.MAX_SAFE_INTEGER;
+    let minNum = temp;
     
     for (let i=x1; i < x2; i++) {
         const moveCell = board[i+1][y1];
@@ -45,6 +45,5 @@ function rotation(board, query) {
         minNum = Math.min(minNum, moveCell);
     }
     board[x1][y1+1] = temp;
-    minNum = Math.min(minNum, temp);
     return minNum;
 }
