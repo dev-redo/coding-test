@@ -1,10 +1,11 @@
 function solution(orders, courses) {
     const answer = [];
-    
+
     for (let course of courses) {
         const oH = new Map();
         for (let order of orders) {
-            backTracking(course, oH, order, 0, '', 0);
+            const orderSort = order.split("").sort().join("");
+            backTracking(course, oH, orderSort, 0, '', 0);
         }
         getMaxSet(oH, answer);
     }
@@ -28,10 +29,9 @@ function getMaxSet(map, answer) {
     }
 }
 
-// backTracking(course, oH, order, 0, '', 0);
-function backTracking(end, map, order, idx, str, start) {
+
+function backTracking(end, map, order, idx, comb, start) {
     if (idx === end) {
-        const comb = str.split('').sort().join('');
         if (map.has(comb)) {
             map.set(comb, map.get(comb)+1);
         }
@@ -40,9 +40,8 @@ function backTracking(end, map, order, idx, str, start) {
         }
         return;
     }
-    
     for (let i=start; i<order.length; i++) {
         const ch = order.charAt(i);
-        backTracking(end, map, order, idx+1, str+ch, i+1);
+        backTracking(end, map, order, idx+1, comb+ch, i+1);
     }
 }
