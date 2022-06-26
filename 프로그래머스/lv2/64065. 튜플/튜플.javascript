@@ -5,7 +5,7 @@
 
 function solution(s) {
     const answer = [];
-    s = s.replace(/\{/g, "[")
+    s = s.replace(/{/g, "[")
          .replace(/}/g, "]");
     const arrayS = JSON.parse(s).sort((next, cur) => next.length - cur.length);
     
