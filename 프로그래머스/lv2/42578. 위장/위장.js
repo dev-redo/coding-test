@@ -1,3 +1,4 @@
+// dp: (n+1) * (m+1) - 1
 function solution(clothes) {
     let answer = 1;
     
