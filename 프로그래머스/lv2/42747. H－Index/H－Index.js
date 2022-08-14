@@ -2,7 +2,7 @@ function solution(citations) {
     // 1. 내림차순 정렬
     citations.sort((prev, curr) => curr - prev);
     
-    // 2. position <= f(position)
+    // 2. position <= f(position)가 되는 x의 최댓값
     let i = 0;
     while (i + 1 <= citations[i]) {
         i += 1;
