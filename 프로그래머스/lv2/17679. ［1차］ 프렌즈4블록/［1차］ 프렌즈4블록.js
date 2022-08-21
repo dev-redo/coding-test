@@ -3,7 +3,7 @@ function solution(m, n, board) {
     
     // 블록 터트리기
     while (true) {
-        const find = [];
+        const find = []; // 터트릴 블록 좌표
         
         // 터트릴 블록 PUSH
         for (let y=0; y<m-1; y+=1) {
