@@ -17,6 +17,6 @@ function solution(s) {
         }
         answer = Math.min(answer, sentence.length);
     }
+    console.log("hi")
     return answer;
-    dddd
 }
