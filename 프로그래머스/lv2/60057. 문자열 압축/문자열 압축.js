@@ -1,6 +1,5 @@
 function solution(s) {
     let answer = s.length;
-    
     for(i = 1 ; i <= Math.floor(s.length / 2); i++) {
         let sentence = "";
         let last = 0;
@@ -19,4 +18,5 @@ function solution(s) {
         answer = Math.min(answer, sentence.length);
     }
     return answer;
+    dddd
 }
