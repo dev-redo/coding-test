@@ -3,7 +3,7 @@ function solution(progresses, speeds) {
 	const needTimes = progresses.map((progress, idx) => {
 		return Math.ceil((100 - progress) / speeds[idx]);
 	});
-	let nowDay = needTimes[0];
+	let nowDay = needTimes[0]; //
 
 	while (needTimes.length > 0) {
 		let count = 0;
