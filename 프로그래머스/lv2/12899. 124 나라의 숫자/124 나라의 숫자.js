@@ -5,6 +5,7 @@ function solution(n) {
         n -= (n % 3 ? n % 3 : 3);
         n = Math.floor(n/3);
     }
+    
     return str;
 }
 
