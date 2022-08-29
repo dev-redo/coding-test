@@ -23,5 +23,5 @@ function solution(s) {
     }
     result.sort((a, b) => a.len - b.len);     
         
-    return result[0].len;
+    // return result[0].len;
 }
