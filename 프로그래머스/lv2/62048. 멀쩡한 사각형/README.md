@@ -1,6 +1,6 @@
 # [level 2] 멀쩡한 사각형 - 62048 
 
-[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/62048) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/62048) 
 
 ### 성능 요약
 
