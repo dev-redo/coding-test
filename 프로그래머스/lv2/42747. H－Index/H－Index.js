@@ -15,7 +15,7 @@ function solution(citations) {
 
 // Formally, if f is the function that corresponds to the number of citations for each publication, we compute the h-index as follows:
 
-// 1. First we order the values of f from the largest to the lowest value.
+// 1. First we order the values of f from the largest to the lowest value.          
 // 해석: f의 값을 가장 큰 값에서 가장 낮은 값으로 정렬한다.
 
 // 2. Then, we look for the last position in which f is greater than or equal to the position (we call h this position).

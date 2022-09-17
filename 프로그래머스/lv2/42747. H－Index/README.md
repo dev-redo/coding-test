@@ -1,10 +1,10 @@
 # [level 2] H-Index - 42747 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42747#fnref1) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42747) 
 
 ### 성능 요약
 
-메모리: 30.2 MB, 시간: 0.05 ms
+메모리: 33.4 MB, 시간: 0.04 ms
 
 ### 구분
 
@@ -45,6 +45,10 @@
 <h5>입출력 예 설명</h5>
 
 <p>이 과학자가 발표한 논문의 수는 5편이고, 그중 3편의 논문은 3회 이상 인용되었습니다. 그리고 나머지 2편의 논문은 3회 이하 인용되었기 때문에 이 과학자의 H-Index는 3입니다.</p>
+
+<h5>문제가 잘 안풀린다면😢</h5>
+
+<p>힌트가 필요한가요? [코딩테스트 연습 힌트 모음집]으로 오세요! → <a href="https://school.programmers.co.kr/learn/courses/14743?itm_content=lesson42747" target="_blank" rel="noopener">클릭</a></p>
 
 <p>※ 공지 - 2019년 2월 28일 테스트 케이스가 추가되었습니다.</p>
 
