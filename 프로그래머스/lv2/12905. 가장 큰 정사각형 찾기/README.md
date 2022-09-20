@@ -1,6 +1,6 @@
 # [level 2] 가장 큰 정사각형 찾기 - 12905 
 
-[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/12905?language=javascript) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12905) 
 
 ### 성능 요약
 
