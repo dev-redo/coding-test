@@ -1,6 +1,6 @@
 function solution(arr1, arr2) {
-    const [row, col] = [arr1.length, arr2[0].length]
-    const result = [...Array(row)].map(() => [...Array(col)]);  // 1. A * D 배열 생성
+    const [row, col] = [arr1.length, arr2[0].length]; // row = B, col = C
+    const result = [...Array(row)].map(() => [...Array(col)]);  // 1. B * C 배열 생성
     
     for (let i=0; i<row; i++) {         // 2.1. arr1의 i번째 행
         for (let j=0; j<col; j++) {     // 2.2. arr2의 j번째 행
@@ -12,7 +12,7 @@ function solution(arr1, arr2) {
 }
 
 // ex. (A * B)와 (C * D)의 행렬의 곱셈
-// @return A * D 행렬 생성
+// @return B * C 행렬 생성
 
 // 공식) result[i,j] = arr1의 i번째 행과 arr2의 j번째 열의 원소들을 곱한 것들의 합
 // ex)
@@ -22,8 +22,8 @@ function solution(arr1, arr2) {
 // result[i][j] = arr1[i].reduce((sum, arr1Val, idx) => sum + arr1Val * arr2[idx][j], 0)
 
 // 로직
-// 1. A * D 배열 생성
+// 1. B * C 배열 생성
 // 2. 2중 루프
-//  - i = arr1의 원소
-//  - j = arr2의 원소
+//  - i = arr1의 원소 -> B까지 LOOP
+//  - j = arr2의 원소 -> C까지 LOOP
 //  - arr1의 i행과 arr2의 j열을 이용해 result[i,j] 구하기
