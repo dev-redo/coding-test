@@ -3,5 +3,5 @@ function solution(s) {
     const min = sort[0];
     const max = sort[sort.length-1];
     
-    // return `${min} ${max}`
+    return `${min} ${max}`
 }
