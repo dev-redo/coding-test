@@ -1,8 +1,6 @@
 function solution(n, k) {
     const convertedN = n.toString(k);
-    
-    const numRegex = /0+/;
-    const splitedConvertedN = convertedN.split(numRegex);
+    const splitedConvertedN = convertedN.split('0');
     
     const positiveIntegerArr = splitedConvertedN
             .filter(num => num !== '')
@@ -28,8 +26,8 @@ function isPrime(num) {
 
 // 1. 양의 정수 n을 k진수로 변환 ✅
 // 2. 변환한 수에서 0이 아닌 숫자들을 얻기 ✅
-//    2.1. 0이 1개 이상 있는지 찾는 정규표현식 구현 = /0+/
-//    2.2. 정규표현식으로 split을 해 0이 아닌 숫자들을 구하기
+//    2.1. 0으로 split
+//    2.2. split하고 얻은 배열로 0이 아닌 숫자들을 구하기
 //      -> 얻어낸 문자를 숫자로 변환해야 한다.
 //      case1. '' = 처음과 끝이 0 -> 얻고자 하는 숫자가 아니므로 제거
 //      case2. ''이 아닌 문자 = 숫자로 변환
