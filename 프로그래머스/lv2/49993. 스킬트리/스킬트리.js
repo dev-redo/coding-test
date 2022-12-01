@@ -28,6 +28,8 @@ function solution(skill, skill_trees) {
         return skill_trees_order;
     }, []);
     
+    console.log(skill_trees_order)
+    
     // 3. 추출한 인덱스 값이 0부터 순차적으로 있는 스킬트리 개수 ✅
     //   -> * 모든 스킬이 없을 수 있으나, 선행 관계를 어길 시 false
     const skill_tree_cnt = skill_trees_order.reduce((skill_tree_cnt, tree_order) => {
