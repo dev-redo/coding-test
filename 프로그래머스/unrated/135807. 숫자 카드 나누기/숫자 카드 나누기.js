@@ -4,8 +4,7 @@ function solution(arrayA, arrayB) {
 
 function getA(arrayA, arrayB) {
     let answer = 0;
-    
-    [...arrayA].sort().forEach(val => answer = gcd(answer, val));
+    arrayA.forEach(val => answer = gcd(answer, val));
 
     if(arrayB.some(val => val % answer === 0)) return 0;
     return answer;
